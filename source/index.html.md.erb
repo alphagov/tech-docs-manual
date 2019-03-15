@@ -35,6 +35,22 @@ your project.
 
 After installing, you can [further customise your site](#configuration-options).
 
+### Hosting on GitHub Pages
+
+You can host your tech-docs site on [GitHub Pages][gh-pages] via a custom domain, using the following procedure:
+
+1. Build your site using `bundle exec middleman build --build-dir=docs`
+1. Commit and push the `docs` directory to the `master` branch of your repository
+1. Visit your repository's "Settings" page, and enable "GitHub Pages", choosing "master branch /docs folder" as the source option.
+1. Using your DNS provider, set up a CNAME pointing your custom domain to `[your account].github.io`
+1. Add the custom domain to the GitHub Pages settings of your repository
+
+Your documentation should now be viewable and searchable at:
+
+`https://[your account].github.io`
+
+NB: You must use a custom domain for your site. By default, GitHub Pages serves your content from a sub-folder, i.e. `https://[your account].github.io/[your repository]` Currently, tech-docs only supports serving content from `/`, the root of the web host, hence the requirement for a custom domain.
+
 ## Update a site
 
 If you want to upgrade to the latest version run the following:
@@ -78,3 +94,5 @@ This project is in active use by:
 In development:
 
 - GOV.UK Notify ([GitHub repo](https://github.com/alphagov/notifications-tech-docs))
+
+[gh-pages]: https://pages.github.com/
